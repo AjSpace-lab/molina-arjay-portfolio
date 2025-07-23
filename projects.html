@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects - Molina Arjay</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top futuristic-nav">
+        <div class="container">
+            <a class="navbar-brand glow-text" href="index.html">
+                <i class="fas fa-code"></i> MOLINA ARJAY
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="projects.html">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Projects Section -->
+    <section class="projects-section py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h1 class="section-title glow-text">My Projects</h1>
+                <div class="highlight-bar mx-auto mb-4"></div>
+                <p class="section-subtitle">Explore my latest work and creative solutions</p>
+            </div>
+
+            <!-- Filter Buttons -->
+            <div class="filter-buttons text-center mb-5">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="web">Web Apps</button>
+                <button class="filter-btn" data-filter="mobile">Mobile</button>
+                <button class="filter-btn" data-filter="design">UI/UX</button>
+            </div>
+
+            <!-- Projects Grid -->
+            <div class="projects-grid">
+                <div class="row">
+                    <!-- Project 1 -->
+                    <div class="col-lg-4 col-md-6 mb-4 project-item" data-category="web">
+                        <div class="project-card">
+                            <div class="project-image">
+                                <img src="images/project1.png" alt="E-Commerce Platform">
+                                <div class="project-overlay">
+                                    <div class="project-links">
+                                        <a href="#" class="project-link">
+                                            <i class="fas fa-external-link-alt"></i>
+                                        </a>
+                                        <a href="#" class="project-link">
+                                            <i class="fab fa-github"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="project-content">
+                                <h4 class="project-title">E-Commerce Platform</h4>
+                                <p class="project-description">
+                                    A full-stack e-commerce solution with React, Node.js, and MongoDB. 
+                                    Features include user authentication, payment integration, and admin dashboard.
+                                </p>
+                                <div class="project-tech">
+                                    <span class="tech-tag">React</span>
+                                    <span class="tech-tag">Node.js</span>
+                                    <span class="tech-tag">MongoDB</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 2 -->
+                    <div class="col-lg-4 col-md-6 mb-4 project-item" data-category="mobile">
+                        <div class="project-card">
+                            <div class="project-image">
+                                <img src="images/project2.png" alt="Task Management App">
+                                <div class="project-overlay">
+                                    <div class="project-links">
+                                        <a href="#" class="project-link">
+                                            <i class="fas fa-external-link-alt"></i>
+                                        </a>
+                                        <a href="#" class="project-link">
+                                            <i class="fab fa-github"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="project-content">
+                                <h4 class="project-title">Task Management App</h4>
+                                <p class="project-description">
+                                    A mobile-first task management application built with React Native. 
+                                    Features real-time sync, offline support, and intuitive UI/UX design.
+                                </p>
+                                <div class="project-tech">
+                                    <span class="tech-tag">React Native</span>
+                                    <span class="tech-tag">Firebase</span>
+                                    <span class="tech-tag">Redux</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 3 -->
+                    <div class="col-lg-4 col-md-6 mb-4 project-item" data-category="web">
+                        <div class="project-card">
+                            <div class="project-image">
+                                <img src="images/project1.png" alt="Portfolio Website">
+                                <div class="project-overlay">
+                                    <div class="project-links">
+                                        <a href="#" class="project-link">
+                                            <i class="fas fa-external-link-alt"></i>
+                                        </a>
+                                        <a href="#" class="project-link">
+                                            <i class="fab fa-github"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="project-content">
+                                <h4 class="project-title">Portfolio Website</h4>
+                                <p class="project-description">
+                                    A modern, responsive portfolio website with futuristic design elements.
+                                    Built with HTML5, CSS3, Bootstrap, and JavaScript animations.
+                                </p>
+                                <div class="project-tech">
+                                    <span class="tech-tag">HTML5</span>
+                                    <span class="tech-tag">CSS3</span>
+                                    <span class="tech-tag">JavaScript</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 4 -->
+                    <div class="col-lg-4 col-md-6 mb-4 project-item" data-category="design">
+                        <div class="project-card">
+                            <div class="project-image">
+                                <img src="images/project2.png" alt="Banking App Design">
+                                <div class="project-overlay">
+                                    <div class="project-links">
+                                        <a href="#" class="project-link">
+                                            <i class="fas fa-external-link-alt"></i>
+                                        </a>
+                                        <a href="#" class="project-link">
+                                            <i class="fab fa-behance"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="project-content">
+                                <h4 class="project-title">Banking App UI Design</h4>
+                                <p class="project-description">
+                                    Modern and secure banking application UI/UX design. 
+                                    Focus on user experience, accessibility, and visual hierarchy.
+                                </p>
+                                <div class="project-tech">
+                                    <span class="tech-tag">Figma</span>
+                                    <span class="tech-tag">UI/UX</span>
+                                    <span class="tech-tag">Prototyping</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 5 -->
+                    <div class="col-lg-4 col-md-6 mb-4 project-item" data-category="web">
+                        <div class="project-card">
+                            <div class="project-image">
+                                <img src="images/project1.png" alt="Restaurant Website">
+                                <div class="project-overlay">
+                                    <div class="project-links">
+                                        <a href="#" class="project-link">
+                                            <i class="fas fa-external-link-alt"></i>
+                                        </a>
+                                        <a href="#" class="project-link">
+                                            <i class="fab fa-github"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="project-content">
+                                <h4 class="project-title">Restaurant Website</h4>
+                                <p class="project-description">
+                                    A beautiful restaurant website with online ordering system.
+                                    Features menu display, reservation system, and contact forms.
+                                </p>
+                                <div class="project-tech">
+                                    <span class="tech-tag">WordPress</span>
+                                    <span class="tech-tag">PHP</span>
+                                    <span class="tech-tag">MySQL</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 6 -->
+                    <div class="col-lg-4 col-md-6 mb-4 project-item" data-category="mobile">
+                        <div class="project-card">
+                            <div class="project-image">
+                                <img src="images/project2.png" alt="Fitness Tracker">
+                                <div class="project-overlay">
+                                    <div class="project-links">
+                                        <a href="#" class="project-link">
+                                            <i class="fas fa-external-link-alt"></i>
+                                        </a>
+                                        <a href="#" class="project-link">
+                                            <i class="fab fa-github"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="project-content">
+                                <h4 class="project-title">Fitness Tracker App</h4>
+                                <p class="project-description">
+                                    Cross-platform fitness tracking app with workout plans, 
+                                    progress tracking, and social features for motivation.
+                                </p>
+                                <div class="project-tech">
+                                    <span class="tech-tag">Flutter</span>
+                                    <span class="tech-tag">Dart</span>
+                                    <span class="tech-tag">SQLite</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Custom JS -->
+    <script src="js/scripts.js"></script>
+</body>
+</html>
