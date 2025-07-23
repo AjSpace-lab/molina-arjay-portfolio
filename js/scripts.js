@@ -173,7 +173,16 @@ function initProjectFilter() {
 // ================================
 // CONTACT FORM
 // ================================
+// ================================
+// EMAILJS CONTACT FORM
+// ================================
+// ================================
+// EMAILJS CONTACT FORM
+// ================================
 function initContactForm() {
+    // Initialize EmailJS with YOUR public key
+    emailjs.init("L6BE5d-uI7Fo1pZn_");
+    
     const contactForm = document.getElementById('contactForm');
     
     if (contactForm) {
@@ -186,43 +195,91 @@ function initContactForm() {
             const email = document.getElementById('email').value;
             const subject = document.getElementById('subject').value;
             const message = document.getElementById('message').value;
+            const phone = document.getElementById('phone').value;
             
-            // Simple validation
+            // Validation
             if (!firstName || !lastName || !email || !subject || !message) {
                 showNotification('Please fill in all required fields.', 'error');
                 return;
             }
             
-            // Simulate form submission
-            const submitBtn = this.querySelector('button[type="submit"]');
+            // Combine first and last name
+            const fullName = `${firstName} ${lastName}`;
+            
+            // Prepare template parameters
+            const templateParams = {
+                from_name: fullName,
+                from_email: email,
+                phone: phone || 'Not provided',
+                subject: subject,
+                message: message
+            };
+            
+            // Get submit button
+            const submitBtn = contactForm.querySelector('button[type="submit"]');
             const originalText = submitBtn.innerHTML;
             
             // Loading state
             submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
             submitBtn.disabled = true;
             
-            // Simulate API call
-            setTimeout(() => {
+            // Send email using EmailJS with YOUR keys
+            emailjs.send(
+                'service_ggvcigj',      // Your service ID
+                'template_0sa7c6s',     // Your template ID
+                templateParams
+            )
+            .then(function(response) {
+                console.log('SUCCESS!', response.status, response.text);
+                
                 // Success state
                 submitBtn.innerHTML = '<i class="fas fa-check"></i> Message Sent!';
                 submitBtn.style.background = 'linear-gradient(135deg, #39ff14, #00fff7)';
                 
-                // Show success message
-                showNotification(`Thank you ${firstName}! Your message has been sent successfully.`, 'success');
-                
-                // Log form data to console (for testing)
-                console.log('Form submitted:', {
-                    firstName, lastName, email, subject, message
-                });
+                // Show success notification
+                showNotification(`Thank you ${firstName}! Your message has been sent successfully. I'll get back to you soon!`, 'success');
                 
                 // Reset form
                 setTimeout(() => {
-                    this.reset();
+                    contactForm.reset();
                     submitBtn.innerHTML = originalText;
                     submitBtn.disabled = false;
                     submitBtn.style.background = '';
                 }, 3000);
                 
-            }, 2000);
+            }, function(error) {
+                console.log('FAILED...', error);
+                
+                // Error state
+                submitBtn.innerHTML = '<i class="fas fa-exclamation-triangle"></i> Failed to Send';
+                submitBtn.style.background = 'linear-gradient(135deg, #ff4757, #ff6b7a)';
+                
+                // Show error notification
+                showNotification('Sorry, there was an error sending your message. Please try again or email me directly.', 'error');
+                
+                // Reset button
+                setTimeout(() => {
+                    submitBtn.innerHTML = originalText;
+                    submitBtn.disabled = false;
+                    submitBtn.style.background = '';
+                }, 3000);
+            });
         });
     }
+    
+    // Input focus effects
+    const inputs = document.querySelectorAll('.futuristic-input');
+    inputs.forEach(input => {
+        input.addEventListener('focus', function() {
+            if (this.parentElement) {
+                this.parentElement.style.transform = 'translateY(-2px)';
+            }
+        });
+        
+        input.addEventListener('blur', function() {
+            if (this.parentElement) {
+                this.parentElement.style.transform = 'translateY(0)';
+            }
+        });
+    });
+}

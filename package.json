@@ -6,7 +6,9 @@
     "start": "live-server --port=3000 --host=localhost --open=/"
   },
   "devDependencies": {
-    "live-server": "^1.2.2"
+    "live-server": "^1.2.0"
+  },
+  "dependencies": {
+    "@vercel/analytics": "^1.5.0"
   }
 }
-
